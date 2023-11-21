@@ -28,7 +28,7 @@ while 1
     distance = brick.UltrasonicDist(3);
     
     %Color Decisions
-    %{ 
+    
     if color == 5                      %if color is red stop for 4 sec                   
         disp('red');
         brick.StopMotor('AD', 'Brake'); %Brake to prevent going off course
@@ -43,7 +43,7 @@ while 1
         brick.MoveMotor('D', motorrf);
         pause(6);
     end
-    %}
+    
     
     %Navigation
     if distance > threshold                %if right wall falls away from right side
@@ -64,7 +64,7 @@ while 1
         dist = brick.UltrasonicDist(3); %get distance from right wall
         brick.MoveMotor('A', motorlb);
         brick.MoveMotor('D', motorrb);
-        pause(3.5); %time to back up from wall
+        pause(2.8); %time to back up from wall
         brick.StopMotor('AD', 'Brake'); %stop
         
         %theoretically should never get here if previous method right
