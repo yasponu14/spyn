@@ -32,7 +32,7 @@ while 1
     if color == 5                      %if color is red stop for 4 sec                   
         disp('red');
         brick.StopMotor('AD', 'Brake'); %Brake to prevent going off course
-        pause(4); %wait 4 seconds
+        pause(1); %wait 1 seconds
         brick.MoveMotor('A', motorlf); 
         brick.MoveMotor('D', motorrf);
         pause(0.5);
@@ -70,14 +70,14 @@ while 1
         %theoretically should never get here if previous method right
         if distance < threshold %if there is no wall on the right
             brick.MoveMotor('D', 20); 
-            pause(2.5);
+            pause(2.3);
             brick.StopMotor('D', 'Brake');
             brick.MoveMotor('A', motorlf); 
             brick.MoveMotor('D', motorrf);
             pause(2);
         else %if there is a wall on the right
             brick.MoveMotor('A', 20);
-            pause(2.5);
+            pause(2.3);
             brick.StopMotor('A', 'Brake');
             brick.MoveMotor('A', motorlf); 
             brick.MoveMotor('D', motorrf);
